@@ -1,4 +1,4 @@
-## Canned Monsters - Procedurally generated monsters in a sardines can.
+## Canned Monsters - Procedurally generated monsters in a sardines can
 
 License: CC-BY
 
@@ -9,6 +9,6 @@ In-browser: on [itch.io](https://tonywang.itch.io/can) or [GitHub](https://palad
 ![Screenshot](imgs/can.png "Canned Monsters")
 ![Preview](imgs/can.gif "Canned Monsters")
 
-Yummy, yummy...
+Yummy, yummy... Tap to eat.
 
 This program is developed in the fantasy computer [BASIC8](https://store.steampowered.com/app/767240/). Check out the [homepage](https://paladin-t.github.io/b8/) for more.
