@@ -32,7 +32,7 @@ REM Variables.
 
 ' Logic.
 stage = INTRO
-t = 0
+t = 0 ' Time counter.
 mouse_down = false
 var_x = 0
 var_y = 0
@@ -49,7 +49,7 @@ def generate_one(i)
 		(
 			' Initializes the frames.
 			srnd(ticks() + tan(i) * 1000)
-			cl = rnd(1, 15)
+			cl = rnd(1, 15) ' A random palette index.
 			sprite = load_blank("sprite", 8, 8, 2)
 			for var_x = 0 to 7
 				for var_y = 0 to 7
@@ -173,9 +173,9 @@ def title(delta)
 			shown = true
 			d = 1
 		endif
-		by = -30
-		ey = (128 - 30) / 2 - 28
-		y = by + (ey - by) * d
+		begin_y = -30
+		end_y = (128 - 30) / 2 - 28
+		y = begin_y + (end_y - begin_y) * d
 	endif
 	' Shows visuals.
 	img title_bg, 0, 0
@@ -190,13 +190,13 @@ def title(delta)
 		img arrow_left, x, 32
 		img arrow_left, x, 80
 		touch 0, tx, ty, md
-		if md then
+		if md then ' LMB down.
 			if not mouse_down then
 				mouse_down = true
 				var_x = tx
 				var_y = ty
 			endif
-		elseif mouse_down then
+		elseif mouse_down then ' LMB up.
 			mouse_down = false
 			tx = tx - var_x
 			if tx < 0 then
@@ -246,13 +246,13 @@ def crowding(delta)
 	' Generates new monster when clicked.
 	if n < TOTAL_COUNT then return
 	touch 0, tx, ty, md
-	if md then
+	if md then ' LMB down.
 		if not mouse_down then
 			mouse_down = true
 			var_x = tx
 			var_y = ty
 		endif
-	elseif mouse_down then
+	elseif mouse_down then ' LMB up.
 		mouse_down = false
 		var_x = floor(var_x / 9) - 1
 		var_y = floor((var_y - 2) / 9) - 1
